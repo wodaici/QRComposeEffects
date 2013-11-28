@@ -8,7 +8,7 @@
 
 #import "TRViewController.h"
 #import <CoreImage/CoreImage.h>
-
+#import "TRFilterGenerator.h"
 @interface TRViewController ()
 
 @property (nonatomic, strong) IBOutlet UIImageView *resultView;
@@ -124,6 +124,14 @@ static NSArray *effectNameKeys;
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
+    
+    
+//    test
+    
+   UIImage *image = [TRFilterGenerator qrEncodeWithAatarPixellate:selectedImage withQRString:@"我是二维码 快点扫我啊 快点扫我啊~看到我了没有 我是二维码 我是二维码 ~~"];
+    
+    self.resultView.image = image;
+    
 }
 
 #pragma mark ==== ImageCompose ====
